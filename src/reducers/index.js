@@ -3,11 +3,15 @@ import { GET_BREEDS_START,
   GET_BREEDS_FAIL,
   GET_RANDOM_START,
   GET_RANDOM_SUCCESS,
-  GET_RANDOM_FAIL } from '../actions';
+  GET_RANDOM_FAIL,
+  GET_BREED_PICS_START,
+  GET_BREED_PICS_SUCCESS,
+  GET_BREED_PICS_FAIL } from '../actions';
 
 const initialState = {
   breeds: {},
   randomImage: '',
+  breedPics: [],
   error: '',
   isFetching: false
 }
@@ -51,6 +55,24 @@ export const reducer = (state = initialState, action) => {
           ...state,
           error: action.payload
         }
+        case 'GET_BREED_PICS_START':
+          return {
+            ...state,
+            isFetching: true,
+            error: ''
+          }
+          case 'GET_BREED_PICS_SUCCESS':
+            return {
+              ...state,
+              breedPics: action.payload,
+              isFetching: false,
+              error: ''
+            }
+        case 'GET_BREED_PICS_FAIL':
+          return {
+            ...state,
+            error: action.payload
+          }
     default:
       return state;
   }

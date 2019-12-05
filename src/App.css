@@ -24,3 +24,21 @@
 .breed h2 {
   text-transform: capitalize;
 }
+.breed img {
+  height: 50px;
+  width: 50px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 10%;
+}
+.breed {
+  width: 20%;
+  text-decoration: none;
+  color: inherit;
+}
+.dog-photo {
+  width: 100%;
+  padding: 20px 0;
+}
